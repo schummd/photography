@@ -137,6 +137,7 @@ function Contact () {
       .then(() => setFormState(true))
       .catch(() => setFormState(false));
 
+    document.querySelector("form").addEventListener("submit", handleSubmit);
     // resent the whole form
     event.currentTarget.reset();
   };
