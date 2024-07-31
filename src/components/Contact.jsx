@@ -186,7 +186,7 @@ function Contact () {
 
         <Box
           component={'form'}
-          name={'contact'}
+          name={'contact-form'}
           noValidate
           onSubmit={handleSubmit}
         >
