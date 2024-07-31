@@ -91,18 +91,15 @@ const displayAlert = () => {
   )
 }
 
-function Contact () {
-  // const navigate = useNavigate();
-
+export default function Contact () {
   const [nameError, setNameError] = React.useState(false);
   const [emailError, setEmailError] = React.useState('');
   const [messageError, setMessageError] = React.useState(false);
   const [formState, setFormState] = React.useState(false);
 
-  const handleSubmit = async (event) => {
+  async function handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-
     const user = {
       email: data.get('email', '').toString().trim(),
       name: data.get('name', '').toString(),
@@ -137,7 +134,6 @@ function Contact () {
       .then(() => setFormState(true))
       .catch(() => setFormState(false));
 
-    document.querySelector("form").addEventListener("submit", handleSubmit);
     // resent the whole form
     event.currentTarget.reset();
   };
@@ -191,7 +187,7 @@ function Contact () {
           noValidate
           onSubmit={handleSubmit}
         >
-
+          <input type={'hidden'} name={'form-name'} value={'contact'} />
           <Grid container spacing={2} backgroundColor={''}>
             <Grid item xs={12}>
               <CustomTextField
@@ -266,5 +262,3 @@ function Contact () {
     </Box>
 	)
 }
-
-export default Contact;
