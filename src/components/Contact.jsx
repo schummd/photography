@@ -127,21 +127,16 @@ function Contact () {
     }
     if (error) return;
 
-    // emailjs.sendForm('service_pxs4h07', 'template_qs2x30y', event.currentTarget, { publicKey: 'fbuDiw0NsG1Tb8d6k' })
-    // .then((response) => {
-    //         console.log('success!', response.status, response.text);
-    //         // display success notification
-    //         setFormState(true);
-    //         displayAlert();
-    //       },
-    //       (err) => {
-    //         console.log('failed...', err)
-    //         // display error notification
-    //         setFormState(false);
-    //       });
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => setFormState(true))
+      .catch(() => setFormState(false));
 
-    // // resent the whole form
-    // event.currentTarget.reset();
+    // resent the whole form
+    event.currentTarget.reset();
   };
 
   // listens to a click anywhere on the page and removes the success alert
