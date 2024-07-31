@@ -97,7 +97,6 @@ function Contact () {
   const [nameError, setNameError] = React.useState(false);
   const [emailError, setEmailError] = React.useState('');
   const [messageError, setMessageError] = React.useState(false);
-
   const [formState, setFormState] = React.useState(false);
 
   const handleSubmit = async (event) => {
@@ -126,6 +125,9 @@ function Contact () {
       setMessageError(true);
     }
     if (error) return;
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
 
     fetch("/", {
       method: "POST",
