@@ -186,7 +186,7 @@ function Contact () {
 
         <Box
           component={'form'}
-          name={'contact-form'}
+          name={'contact'}
           noValidate
           onSubmit={handleSubmit}
         >
@@ -251,8 +251,6 @@ function Contact () {
             <NavButton
               type={'submit'}
               disableRipple={true}
-              // onClick={() => handleSubmit()}
-              // sx={{ backgroundColor: '' }}
             >
               <p fontFamily={'Montserrat'}>Submit <Icon viewBox='0 0 18 24'/></p>
             </NavButton>
