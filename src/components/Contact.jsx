@@ -187,7 +187,7 @@ export default function Contact () {
           noValidate
           onSubmit={handleSubmit}
         >
-          <input type={'hidden'} name={'contact'} value={'contact'} />
+          <input type={'hidden'} name={'form-name'} value={'contact'} />
           <Grid container spacing={2} backgroundColor={''}>
             <Grid item xs={12}>
               <CustomTextField
